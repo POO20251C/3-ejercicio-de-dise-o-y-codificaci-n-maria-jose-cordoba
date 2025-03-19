@@ -20,8 +20,10 @@ classDiagram
     class Cliente {
         -String nombre
         -list venta
+        -int numeroDeCompras
         +registrarcliente()
         +listCompras(): list <Venta>
+        +registrarNumeroDeCompras()
     }
 
     class Producto {
