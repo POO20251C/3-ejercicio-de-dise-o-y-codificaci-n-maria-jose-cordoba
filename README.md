@@ -8,12 +8,13 @@ classDiagram
 
     class Cliente {
         -String nombre
-        -list venta
-        -int numeroDeCompras
-        +registrarcliente()
-        +listCompras(): list <Venta>
-        +registrarNumeroDeCompras()
+        - List<Venta> ventas
+        - int numeroDeCompras
+        + registrarCliente()
+        + listarCompras(): List<Venta>
+        + registrarNumeroDeCompras()
     }
+
 
     class Producto {
         -string producto
@@ -22,16 +23,17 @@ classDiagram
         +registrarCantidad()
         +get()
         +set()
+
     }
 
     class Venta {
-        -list Producto
-        -Boolean estado
-        -Date fechadeventa
-        +registrarProductoVendido()
-        +get()
-        +set()
-        +registrarFecha()
+        - List<Producto> productos
+        - boolean estado
+        - Date fechaDeVenta
+        + registrarProductoVendido(Producto p)
+        + registrarFecha(Date fecha)
+        +gets()
+        +sets()
     }
 
     
@@ -39,5 +41,7 @@ classDiagram
     Cliente "1"  --o "many" Venta: realiza
     Venta   "1"  --o "many" Producto: incluye
     Venta   "1" --> "1" Cliente: es
+
+
 ```
 
