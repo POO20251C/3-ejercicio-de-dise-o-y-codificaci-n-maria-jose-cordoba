@@ -5,17 +5,6 @@ Ejercicio entregable para practica diseño y código orientado a objetos
 ```mermaid
 classDiagram
     direction TB
-    class Sistema {
-        -List cliente
-        -List producto
-        -List venta
-        +registrarProdcuto()
-        +registrarVenta()
-        +listarClientes(): List<Cliente>
-        +listarInventario(): List<Producto>
-        +listarVentas(): List<Ventas>
-      
-    }
 
     class Cliente {
         -String nombre
@@ -46,9 +35,7 @@ classDiagram
     }
 
     
-    Sistema "1" --o "many" Cliente: registrados
-    Sistema "1" --o "many" Producto: tiene
-    Sistema "1" --o "many" Venta: gestiona
+
     Cliente "1"  --o "many" Venta: realiza
     Venta   "1"  --o "many" Producto: incluye
     Venta   "1" --> "1" Cliente: es
